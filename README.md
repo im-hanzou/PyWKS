@@ -27,7 +27,7 @@
   <li>Run the script using the following command:</li>
 </ol>
 
-<pre><code>python script.py</code></pre>
+<pre><code>python pywks.py</code></pre>
 
 <h2>Input Parameters</h2>
 
