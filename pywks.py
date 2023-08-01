@@ -55,6 +55,22 @@ def main():
     except ValueError:
         print("Thread must be an integer!")
         return
+    
+    try:
+        with open(file_path, 'rb') as file:
+            byte_content = file.read()
+            file_content = byte_content.decode('utf-8', errors='ignore')
+
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(file_content)
+
+    except FileNotFoundError:
+        print("File not found!")
+        return
+    except UnicodeDecodeError:
+        print("Error decoding the file to UTF-8!")
+        return
+
     try:
         with open(file_path, 'r') as file:
             websites = file.read().splitlines()
