@@ -62,6 +62,9 @@ def main():
         print("File not found!")
         return
 
+    websites = [url.strip() for url in websites]
+    websites = [url if url.startswith("http://") or url.startswith("https://") else "https://" + url for url in websites]
+
     q = Queue()
     for url in websites:
         q.put(url)
